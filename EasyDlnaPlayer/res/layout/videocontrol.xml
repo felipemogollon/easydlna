@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.easydlna.dlna.videorender.VideoControl xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/controlRelativeLayout"
+	android:layout_width="150px"
+	android:layout_height="fill_parent"
+	android:background="@drawable/control_backgorund"
+	android:clickable="true" >
+	<ImageButton
+		android:id="@+id/ImageButtonLeft"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true"
+		android:layout_marginRight="5dip"
+		android:layout_toLeftOf="@+id/ImageButtonOk"
+		android:background="@null"
+		android:src="@drawable/fb_normal" >
+	</ImageButton>
+	<ImageButton
+		android:id="@+id/ImageButtonOk"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_centerInParent="true"
+		android:layout_centerVertical="true"
+		android:background="@null"
+		android:src="@drawable/ok_normal" >
+	</ImageButton>
+	<ImageButton
+		android:id="@+id/ImageButtonUp"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_above="@+id/ImageButtonOk"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="5dip"
+		android:background="@null"
+		android:src="@drawable/ff_normal" >
+	</ImageButton>
+	<ImageButton
+		android:id="@+id/ImageButtonDown"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/ImageButtonOk"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="5dip"
+		android:background="@null"
+		android:src="@drawable/fb_normal" >
+	</ImageButton>
+	<ImageButton
+		android:id="@+id/ImageButtonRight"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true"
+		android:layout_marginLeft="5dip"
+		android:layout_toRightOf="@+id/ImageButtonOk"
+		android:background="@null"
+		android:src="@drawable/ff_normal" >
+	</ImageButton>
+</com.easydlna.dlna.videorender.VideoControl>

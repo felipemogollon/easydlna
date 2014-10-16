@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.easydlna.dlna.videorender.HeadUI xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/TitleRelativeLayout"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:clickable="false"
+	android:focusable="true" >
+	<ImageView
+		android:id="@+id/title_imgView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/title_video"
+		android:clickable="false" >
+	</ImageView>
+	<TextView
+		android:id="@+id/Title_video"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="5dip"
+		android:layout_toRightOf="@+id/title_imgView"
+		android:text="@string/video"
+		android:textColor="#ffffff"
+		android:textSize="24sp"
+		android:textStyle="bold"
+		android:typeface="sans" >
+	</TextView>
+	<TextView
+		android:id="@+id/title_render"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/Title_video"
+		android:layout_toRightOf="@+id/title_imgView"
+		android:text="@string/digital_media_render"
+		android:textColor="#ffffff"
+		android:textSize="18sp" >
+	</TextView>
+	<TextView
+		android:id="@+id/title_videoName"
+		android:layout_width="fill_parent"
+		android:layout_height="40dip"
+		android:layout_marginLeft="150dip"
+		android:ellipsize="marquee"
+		android:focusable="true"
+		android:focusableInTouchMode="true"
+		android:marqueeRepeatLimit="marquee_forever"
+		android:text="@string/digital_media_render"
+		android:textColor="#ffffff"
+		android:textSize="30sp"
+		android:visibility="visible" >
+	</TextView>
+</com.easydlna.dlna.videorender.HeadUI>

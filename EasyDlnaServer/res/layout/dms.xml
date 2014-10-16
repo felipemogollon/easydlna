@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/myScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="@dimen/title_margin"
+                android:layout_marginRight="@dimen/title_margin"
+                android:text="@string/server_name" />
+
+            <RelativeLayout
+                android:id="@+id/LinearLayout01"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal" >
+
+                <EditText
+                    android:id="@+id/EditDMSName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/title_margin"
+                    android:layout_marginRight="@dimen/title_margin"
+                    android:gravity="center_vertical"
+                    android:hint="EasyDlna"
+                    android:inputType="text" >
+                </EditText>
+            </RelativeLayout>
+
+            <TextView
+                style="@style/TitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="@dimen/title_margin"
+                android:text="@string/share_setting" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/video"
+                        style="@style/TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/margin"
+                        android:text="@string/video" />
+
+                    <CheckBox
+                        android:id="@+id/TriggerVideo"
+                        style="@style/CustomCheckboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/title_margin"
+                        android:checked="true" >
+                    </CheckBox>
+                </RelativeLayout>
+
+                <include layout="@layout/divider" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/audio"
+                        style="@style/TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/margin"
+                        android:text="@string/audio" />
+
+                    <CheckBox
+                        android:id="@+id/TriggerAudio"
+                        style="@style/CustomCheckboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/title_margin"
+                        android:checked="true" >
+                    </CheckBox>
+                </RelativeLayout>
+
+                <include layout="@layout/divider" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/image"
+                        style="@style/TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/margin"
+                        android:text="@string/image" />
+
+                    <CheckBox
+                        android:id="@+id/TriggerImage"
+                        style="@style/CustomCheckboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/title_margin"
+                        android:checked="true" >
+                    </CheckBox>
+                </RelativeLayout>
+
+                <include layout="@layout/divider" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="@dimen/title_margin"
+                android:text="@string/basic_setting" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/auto_start"
+                        style="@style/TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/margin"
+                        android:text="@string/auto_start" />
+
+                    <CheckBox
+                        android:id="@+id/TriggerAutoStart"
+                        style="@style/CustomCheckboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/title_margin" >
+                    </CheckBox>
+                </RelativeLayout>
+
+                <include layout="@layout/divider" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="@dimen/title_margin"
+        android:layout_marginRight="@dimen/title_margin" >
+
+        <Button
+            android:id="@+id/TriggetDMS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bluebutton"
+            android:text="@string/start_dms"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:id="@+id/TwoButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/BtnCloseDMS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/title_margin"
+                android:layout_weight="1"
+                android:background="@drawable/redbutton"
+                android:text="@string/close_dms"
+                android:textAppearance="?android:attr/textAppearanceMedium" >
+            </Button>
+
+            <Button
+                android:id="@+id/BtnBroadcast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bluebutton"
+                android:text="@string/send"
+                android:textAppearance="?android:attr/textAppearanceMedium" >
+            </Button>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

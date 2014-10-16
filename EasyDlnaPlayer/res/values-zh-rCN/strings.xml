@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DMR客户端</string>
+    <string name="video">视频</string>
+    <string name="digital_media_render">DMR客户端</string>
+    <string name="no_file_play">文件未发现</string>
+    <string name="dmr_service_fail">DMR服务启动失败</string>
+    <string name="dmr_start_success">DMR服务启动成功</string>
+
+</resources>

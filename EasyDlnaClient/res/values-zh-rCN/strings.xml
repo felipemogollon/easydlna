@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">EasyDlna客户端</string>
+	<string name="text_server_select_button_default">请选择服务器!</string>
+	<string name="text_media_type_selector_video">视频</string>
+	<string name="text_media_type_selector_image">图片</string>
+	<string name="text_media_type_selector_audio">音频</string>
+	<string name="text_menu_refresh_media_server">刷新Server</string>
+	<string name="text_menu_refresh_media_render">刷新Render</string>
+	<string name="text_menu_refresh_media_content">刷新内容</string>
+	<string name="text_menu_start_remote_desktop">远程桌面</string>
+	<string name="message_dmcservice_closed">DMP服务已经被关闭.</string>
+	<string name="message_dmcservice_opened">DMP服务已经被打开.</string>
+	<string name="message_closing_thread_pool">关闭线程池.</string>
+	<string name="message_thread_pool_closed">线程池被关闭.</string>
+	<string name="text_render_select_dialog_title">选择一个render</string>
+	<string name="text_no_server_is_online">-- 当前无在线服务器 --</string>
+	<string name="text_control_button_prev" formated="false">|&lt;</string>
+	<string name="text_control_button_next">" >| "</string>
+	<string name="text_control_button_stop">" [] "</string>
+	<string name="text_control_button_play">" > "</string>
+	<string name="text_control_button_pause">" || "</string>
+	<string name="message_buffering">正在缓冲 ...</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Digital Media Render</string>
+    <string name="video">Video</string>
+    <string name="digital_media_render">Digital Media Render</string>
+    <string name="no_file_play">NO file to play</string>
+    <string name="dmr_service_fail">DMR service fails</string>
+    <string name="dmr_start_success">DMR Service start successfully</string>
+
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+		<string name="app_name">EasyDlnaClient</string>
+	<string name="text_server_select_button_default">Select Server!</string>
+	<string name="text_media_type_selector_video">Videos</string>
+	<string name="text_media_type_selector_image">Images</string>
+	<string name="text_media_type_selector_audio">Audio</string>
+	<string name="text_menu_refresh_media_server">Rescan Server</string>
+	<string name="text_menu_refresh_media_render">Rescan Render</string>
+	<string name="text_menu_refresh_media_content">Rescan Content</string>
+	<string name="text_menu_exit_app">Exit</string>
+	<string name="text_menu_start_remote_desktop">Remote desktop</string>
+	<string name="message_dmcservice_closed">DMP Service has closed.</string>
+	<string name="message_dmcservice_opened">DMP Service has opened.</string>
+	<string name="message_closing_thread_pool">Shutting down thread pool.</string>
+	<string name="message_thread_pool_closed">Thread pool closed.</string>
+	<string name="text_render_select_dialog_title">Select a render</string>
+	<string name="text_no_server_is_online">-- no server is online --</string>
+	<string name="text_control_button_prev" formated="false">|&lt;</string>
+	<string name="text_control_button_next">" >| "</string>
+	<string name="text_control_button_stop">" [] "</string>
+	<string name="text_control_button_play">" > "</string>
+	<string name="text_control_button_pause">" || "</string>
+	<string name="message_buffering">Now buffering ...</string>
+</resources>

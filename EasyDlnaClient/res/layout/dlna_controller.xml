@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.easydlna.dlna.dmc.RemoteImageView
+        android:id="@+id/surface_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:layout_gravity="center"/>
+
+    <RelativeLayout
+        android:id="@+id/status_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/info_title"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:textColor="#FFDEB887"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="20dip"
+            android:textStyle="bold" 
+            android:background="@drawable/bg"/>
+
+        <LinearLayout
+             android:layout_width="fill_parent"
+            android:layout_height="120dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical" 
+            android:background="@drawable/bg">
+
+            <SeekBar
+                android:id="@+id/seek"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:maxHeight="10dp"
+                android:minHeight="10dp"
+                android:progressDrawable="@layout/seekbar_style"
+                android:thumb="@drawable/handle"
+                android:thumbOffset="0dp" />
+
+            <RelativeLayout
+                android:id="@+id/time_pane"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/start_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
+
+                <TextView
+                    android:id="@+id/end_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:id="@+id/play_control_prev"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/previous" />
+
+                <ImageButton
+                    android:id="@+id/play_control_play_pause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/pause" />
+
+                <ImageButton
+                    android:id="@+id/play_control_stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/play"
+                    android:visibility="gone" />
+
+                <ImageButton
+                    android:id="@+id/play_control_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/next" />
+            </LinearLayout>
+        </LinearLayout>
+  
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/sound_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/volume2"
+            android:visibility="invisible" />
+
+        <com.easydlna.dlna.dmc.VerticalSeekbar
+            android:id="@+id/sound_controll"
+            android:layout_width="15dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:progressDrawable="@layout/seekbar_vertical_style"
+            android:thumb="@drawable/handle"
+            android:thumbOffset="0dp"
+            android:visibility="invisible" >
+        </com.easydlna.dlna.dmc.VerticalSeekbar>
+
+        <ImageView
+            android:id="@+id/sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/volume" />
+    </LinearLayout>
+      </RelativeLayout>
+
+</FrameLayout>

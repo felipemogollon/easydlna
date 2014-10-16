@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <com.easydlna.dlna.dmc.RemoteThumbnailView
+        android:id="@+id/plain_media_item_tumbnail"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:padding="5dp"
+        android:scaleType="centerInside"
+    />
+    <TextView
+        android:id="@+id/plain_media_item_title"
+        android:layout_width="0dp"
+        android:layout_height="50dip"
+        android:layout_weight="1"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        />
+</LinearLayout>

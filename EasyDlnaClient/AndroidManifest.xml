@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.easydlna.dlna.dmc"
+      android:versionCode="1"
+      android:versionName="1.0">
+
+	
+    <application android:icon="@drawable/dmp" android:label="@string/app_name">
+        <activity android:name="EasyDlnaClient"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="DlnaController"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait">
+        </activity>
+    </application>
+	
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    
+</manifest>

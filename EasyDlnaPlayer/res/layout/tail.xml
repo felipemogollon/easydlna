@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.easydlna.dlna.videorender.VideoTail xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/TailRelativeLayout"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content" >
+	<TextView
+		android:id="@+id/tail_begin"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true"
+		android:layout_marginLeft="5dip"
+		android:focusable="true"
+		android:text="00:00:00"
+		android:textColor="#ffffff"
+		android:textSize="18sp" >
+	</TextView>
+	<TextView
+		android:id="@+id/tail_end"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_centerVertical="true"
+		android:layout_marginRight="5dip"
+		android:focusable="true"
+		android:text="00:00:00"
+		android:textColor="#ffffff"
+		android:textSize="18sp" >
+	</TextView>
+	<SeekBar
+		android:id="@+id/tail_seekbar"
+		style="@style/CustomSeekBar"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginLeft="7dip"
+		android:layout_marginRight="7dip"
+		android:layout_toLeftOf="@+id/tail_end"
+		android:layout_toRightOf="@+id/tail_begin"
+		android:focusable="true"
+		android:indeterminateOnly="false"
+		android:progress="0"
+		android:secondaryProgress="0" >
+	</SeekBar>
+</com.easydlna.dlna.videorender.VideoTail>

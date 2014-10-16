@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">EasyDlna服务器</string>
+	<string name="StartDMC">启动DMC</string>
+	<string name="StartDMR">启动DMR</string>
+	<string name="msg_network_dmc">StartDMC: 无网络，请开WIFI</string>
+	<string name="msg_network_dmr">StartDMR: 无网络，请开WIFI</string>
+	<string name="msg_network">无网络，请开WIFI</string>
+	<string name="server_name">服务器名称</string>
+	<string name="rename">重命名</string>
+	<string name="share_setting">共享设置</string>
+	<string name="video">视频</string>
+	<string name="audio">音频</string>
+	<string name="image">图像</string>
+	<string name="basic_setting">基本设置</string>
+	<string name="auto_start">开机自动启动</string>
+	<string name="start_dms">启动服务</string>
+	<string name="close_dms">关闭服务</string>
+	<string name="send">发送广播</string>
+	<string name="dms_button">EasyDlna服务器</string>
+	<string name="dmc_down">DMC没有启动</string>
+	<string name="dmc_start">DMC启动</string>
+	<string name="dmr_down">DMR没有启动</string>
+	<string name="dmr_start">DMR启动</string>
+	<string name="dms_down">DMS没有启动</string>
+	<string name="dms_start">DMS启动</string>
+	<string name="ok">OK</string>
+	<string name="network_warning">无网络，请开WIFI</string>
+</resources>

@@ -1,0 +1,102 @@
+http://blog.csdn.net/innost/article/details/40216763
+
+EasyDlnaInstructions and Implementation Details
+1 Overview of EasyDlna
+EasyDlna is anDLNA application suites based on Android platform. Currently, it supportsfollowing components defined by DLNA protocol:
+DMS: Digital Media Sever which supply media resources browsing andplaying.
+DMC:Digital Media Controller which is used to interact with otherUPNP Devices like DMS or DMR.
+DMR:Digital Media Render which is used to play media resources foundin one or more DMSs. It likes a MediaPlayer, but it could only be controlled byDMC.
+EasyDlna usesC/S software architecture, it contains following things:
+EasyDlnaServer:Server in C/S arch. It has implemented DMS,DMR andDMC.
+EasyDlnaAPI: API wrapper for Client usage. It is a jar file, Clientsapk should use this jar to communicate with EasyDlnaServer.
+EasyDlnaClient and EasyDlnaPlayer:They are two apks which are alsoclients in C/S arch. EasyDlnaClient implents DMC and EasyDlnaPlayer implementsDMR.
+In addition toJava code, Some core features of EasyDlnaServer are implemented by native codeusing JNI. The JNI parts of EasyDlnaserver are composed of:
+EasyDlnaServer/jni/libeasydlna:a modification version of libupnp for EasyDlna own usage. It could load vendorspecific dlna implementation libraries.
+EasyDlnaServer/jni/ libeasydlna_dlna_plugin: Default implementationof dlna provided by this project.
+In short,libeasydlna.so will load libeasydlna_dlna_plugin which implements some corefeatures of DLNA. Though this way, 3rd party developers could develop their ownfeatures and could be loaded by EasyDlnal.
+Figure 1 showssome hints of EasyDlna Architecture.
+
+Figure 1 Easydlna Architecture
+2 Build and Installation
+2.1  JNI relatedcode compilation：
+download all code using "git clone git://code.csdn.net/Innost/easydlna.git",or search EasyDlna in code.csdn.net
+download NDK build enviroment tools though https://developer.android.com/tools/sdk/ndk/index.html#Installing.Recommended tools is android-ndk-r10c-linux-x86_64.binand Ubuntu 64 platform.
+Configure NDK build enviroment: add ndk_build command path to PATHenviromet, so you could execute "ndk_build" command in any path
+cd EasyDlnaServer dir, and execute " ndk-build-B NDK_PROJECT_PATH=`pwd` NDK_PLATFORM=android-14 ", it willcompile code under jni dir and the created so will be libeasy_dlna.so andlibeasydlna_dlna_plugin.so
+2.2  Java Packageand APKCompilation
+EasyDlnaServer,EasyDlnaClient and EasyDlnaPlayer are Android APKs,please import their code into Eclipse.
+EasyDlnaAPI is a Java project, Please use Eclipse to import it. Thefinal EasyDlnaAPI.jar could be exported using Eclipse. Note that EasyDlnaAPIdepends on android.jar which is provided through Android SDK.
+EasyDlnaClient and EasyDlnaPlayer depend on EasyDlnaAPI.jar. Afteryou get EasyDlnaAPI.jar, manually copy it to EasyDlnaClient/libs andEasyDlnaPlayer/libs. And also use " Add External Jar" to putEasyDlnaAPI.jar into Build Path of each APK.
+2.3  APK Demo
+Figure 2 showshow EasyDlnaServer looks like when it is running:
+
+Figure2 UI of EasyDlnaServer
+When it is launched, Click "EasyDlnaServer" icon to startDMService.
+From right part of figure 2, you could configure DMS, like what kindof Media Resource could be browsed by DMC and the name of DMS.Afterconfiguration, click "Start Service" to really start DMService.
+Figure 3 showsUI of EasyDlnaClient:
+    
+Figure 3  UIof EasyDlnaClient
+From Figure 3:
+Right Top is a list box which shows connected DMSs the DMC finds inLocal Network. You could select the desired DMS to browse its media resources.
+In the middle red frame, it categorize media resources into Video,Audio and Image types.
+Click Menu button of Android device, it will show UI in the bottomwhich resides four buttons. It could enable user to rescan DMSs, Refresh MediaResources in selected DMS, Rescan DMP and Exit the current application.
+When click onemedia resouce, figure 4 tells you what will happen:
+
+Figure 4 Play selected media resource
+EasyDlnaClientsupports Local Render and Remote Render. The local render's name is "LocalRender". The name of a Rmote Render is actually the name of the DMR . Whenyou click a media resource, It will pop a "Select a Render" dialog toask where to play it. So, if only DMR has been found, it will have an option in"Select a Render" dialog.
+If you chooseLocal Render, EasyDlnaClient will play the selected media resource for you.
+3. Code Implementation
+This sectionwill talk a little detail info about JNI part, EasyDlnaServer and EasyDlnaAPI.Please read the code of the rest part.
+3.1  Implementationof JNI part
+1.  libeasydlna
+libeasydlnalocates in EasyDlnaServer/jni/libeaydlna, it includes for child dirs:
+dlnafw：c++ wrapperof libupnp.
+ixml,threadutil and upnp：code of libupnp
+Figure 5 showsserveral important classes of dlnafw.
+
+Figure 5  dlnafw
+In figure 5：
+IUpnp、IUpnpControlPointand IUpnpDevice are wrapper of related action/data structure of libupnp
+IWebVFSCallbacks：interface which abstracts file operations when using http todownload a file.
+IDlnaFrame implements plugin operation which is used to get DLNAcomponents implemented by other plugin. These DLNA compoments could beabstracted into 3 classes, they are IDMServer, IDMController and IDMRender,
+2. libeasydlna_dlna_plugin
+libeasydlna_dlna_pluginprovides default implmentation of dlna plugin, its dir include:
+libeasydlna_dlna_plugin：common implementaion of DLNA components
+Android：Some services (a definition used in DLNA protocol) implmented inAndroid Platform.
+Figure 6 showcommon part of DLNA plugin:
+
+Figure 6  Commonpart of DLNA Plugin:
+CESDlnaPlugin.h：A dlna plugin must implements 5 functions listed in the figure.dlnafw will call them to get vendor specific DLNA components.
+CESDMServer、CESDMRender和CESDMController are DLNA components implemented by this default DLNAplugin.。
+IDlnaContentDirectory,IDlnaAVTransport,IDlnaConnectionManager and IDlnaRenderingControlare different DLNA services that different DLNA components must have. They aredefined in dlnafw and our default DLNA plugin must implement them.
+In Androidplatform, its specific implementation locates in Android dir. Through this way,developers could easily:
+Using special dlna plugin to implement their own features.
+Using default dlna plugin but choose default services implementationto customize dlna features.
+3.2  EasyDlnaServer
+Figure 7 showcore package "com.easydlna.dlna.service" of EasyDlnaServer:
+
+Figure 7  com.easydlna.dlna.service
+DMService、DMCService and DMRService are all derived from Android Service.DMService implemnt DMS feature. One device only need to create one DMS.DMCService is a controller, it could scan DMSs and DMRs in the local network.DMRService is a DMRender. One device only need to create one DMR.
+DlnaDevice is a wrapper of DLNA device in Java layer.
+ContentInfo is a wrapper of Media Resource in DMS.
+RenderStatus is a wrappper of playing info such as time, status of aplayer.
+Notes that:
+DMService is the implementation of DMS in EasyDlna project. It useJNI to communicate with libeasydlna and libeasydlna_dlna_plugin. The MediaResource info are from MediaProvider in Android Platform.
+DMCService is actually a brigde or proxy of DMC feature. It will useEasyDlnaAPI to the real DMC implementation(for example, EasyDlanCilent).
+DMRService is actually a bridge or proxy of DMR feature. It will useEasyDlnaAPI to the real DMR implementation(like EasyDlnaPlayer).
+3.3  EasyDlnaAPI
+EasyDlnaAPI encapsulatesall detailed interactions with EasyDlnaServer, Clients only need to implementsome classes and interfaces exportedby EasyDlnaAPI. Figure 8 shows threeimportant classes in EasyDlnaAPI.
+
+Figure 8  Three important classes of EasyDlnaAPI
+The above threeclients will interact with corresponding services in EasyDlnaServer.
+4  Summary andfuture improvements
+Figure 9 showssource code lines of EasyDlna Project:
+
+Figure 9 source code lines
+Most C part code is brought by libupnp.
+C++ and java code together are about 20000 lines.
+Here are someimprovements hints about this project:
+In current implementation, XML descripion of DLNA components arehard coded. In the future, we could use xml files.
+Some codes (com.easydlna.dlna.service actually) of EasyDlnaServerand EasyDlnaAPI are duplicate, we could develop a common part to eraseduplication.
+1 DMCService in EasyDlnaServer will browse media resources of a DMS.As nowadays, a device has many media files, this procedure will last long. Somefiner improvement is needed.
+2 DMS in EasyDlnaServer provides media resource download only in httpways. In the future, stream media server is prefered. The recommondedopensource stream media server is live555, Please give it a try!

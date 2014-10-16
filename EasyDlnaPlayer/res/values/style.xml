@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<style name="CustomSeekBar" parent="@android:style/Widget.ProgressBar">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/seek_bar</item>
+        <item name="android:indeterminateDrawable">@drawable/seek_bar</item>
+        <item name="android:thumb">@drawable/seekball</item>
+        <item name="android:thumbOffset">8px</item>
+        <item name="android:focusable">true</item>
+    
+</style>
+
+
+
+</resources>

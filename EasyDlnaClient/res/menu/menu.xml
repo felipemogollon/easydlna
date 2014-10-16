@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/rescan_devices"  
+        android:icon="@drawable/menu1" 
+        android:title="@string/text_menu_refresh_media_server"/>
+     <item android:id="@+id/rescan_contents"  
+        android:icon="@drawable/menu3" 
+        android:title="@string/text_menu_refresh_media_content"/>
+      <item android:id="@+id/rescan_renders"  
+        android:icon="@drawable/menu2" 
+        android:title="@string/text_menu_refresh_media_render"/>
+      <item android:id="@+id/exit_app"  
+        android:icon="@drawable/menu2" 
+        android:title="@string/text_menu_exit_app"/>
+</menu>
