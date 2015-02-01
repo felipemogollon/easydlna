@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dip"
         android:paddingLeft="50dip"
-        android:text="共享视频信息" >
+		android:text="@string/share_video" >
     </CheckBox>
 
     <CheckBox
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dip"
         android:paddingLeft="50dip"
-        android:text="共享音频信息" >
+		android:text="@string/share_audio" >
     </CheckBox>
 
     <CheckBox
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dip"
         android:paddingLeft="50dip"
-        android:text="共享图像信息"
+		android:text="@string/share_pic"
         android:width="160dip" >
     </CheckBox>
 

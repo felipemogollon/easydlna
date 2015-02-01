@@ -26,4 +26,7 @@
 	<string name="dms_start">DMS启动</string>
 	<string name="ok">OK</string>
 	<string name="network_warning">无网络，请开WIFI</string>
+	<string name="share_video">共享视频信息</string>
+	<string name="share_audio">共享音频信息</string>
+	<string name="share_pic">共享图像信息</string>
 </resources>
