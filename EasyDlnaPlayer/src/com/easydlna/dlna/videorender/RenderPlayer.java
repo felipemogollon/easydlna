@@ -25,7 +25,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
  * <p>
  * i do not know what to say...
  */
-class RenderPlayer implements Runnable, OnBufferingUpdateListener,
+ class RenderPlayer implements Runnable, OnBufferingUpdateListener,
         OnErrorListener, OnInfoListener, OnPreparedListener,
         OnSeekCompleteListener, OnCompletionListener,
         OnVideoSizeChangedListener, OnSeekBarChangeListener,

@@ -6,5 +6,6 @@
     <string name="no_file_play">NO file to play</string>
     <string name="dmr_service_fail">DMR service fails</string>
     <string name="dmr_start_success">DMR Service start successfully</string>
+    <string name="start_time">00:00:00</string>
 
 </resources>
